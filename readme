@@ -1,3 +1,6 @@
+Arqade Screenshot of the Work Generator
+=======================================
+
 Script for automatically generating the body of the Screenshot of the Week post. Requires Python 3.
 
 Reads a template from template.in, and a set of inputs from input.in. Each line is it's own input, with the format variable_name|variable_value. Output is written to output.out.
