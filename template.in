@@ -1,0 +1,37 @@
+Hello and welcome to the **{sotw_num}<sup>th</sup>** edition of the Screenshot of the Week!
+
+To start with, congratulations to the winner of the previous contest! [{username}'s][last winning post one] picture from [tag:{tag}] won with {upvotes} upvotes! 
+
+[![Last week's winning screenshot one][last winning screenshot one]][last winning screenshot one]
+
+---
+
+To submit a screenshot, simply post it as an answer to this question, but please take note of the following:
+
+- One screenshot per post, and one post per person, please!
+- Limited picture modifications are allowed, such as cropping, simple filters, and blurring of identifying info such as names, but not adding other images or text. 
+- To ensure a fair playing field, please post screenshots you've taken yourself rather than ones you found online. 
+- Stack Exchange’s [Code of Conduct][code of conduct] still applies - so if it would be unacceptable to post normally, it’s unacceptable here. 
+
+Also, try to avoid pictures that include spoilers. We want everyone to be able to enjoy this contest, so the less spoilers the better.
+
+### How long will the contest run?
+We will accept submissions for a week, until 19:00 UTC of {vote_date}, then have a second week-long period where only voting will be accepted. This is to give every submission, even those posted at the end of the first week, a chance to be voted on by everyone. 
+
+After the end of the second week, at 19:00 UTC of {end_date}, we will count upvotes only to determine the winning screenshot, which will be featured for a week on the main site's photo widget.
+
+------------------------
+
+# {theme_title} #
+
+{theme_text}
+
+As a reminder, we're always accepting suggestions for themed weeks, and have compiled that suggestion process into a [question of its own][themes collection].  Additionally, there is the [hall of fame][hall of fame] you can check out that contains all the previous contest winners.
+
+
+  [last winning post one]: {last_winning}
+  [last winning screenshot one]: {last_screenshot}
+
+  [code of conduct]: https://gaming.stackexchange.com/conduct
+  [themes collection]: https://gaming.meta.stackexchange.com/questions/15029/screenshot-of-the-week-themes
+  [hall of fame]: https://gaming.meta.stackexchange.com/questions/14939/screenshot-of-the-week-hall-of-fame
