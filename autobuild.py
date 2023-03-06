@@ -1,6 +1,7 @@
 from build import Input, Template
 from stackauth import StackAuth
 from stackexchange import Site, ArqadeMeta
+import re
 
 class SOTWParser:
     winning_answer = None
@@ -19,7 +20,7 @@ class SOTWParser:
         for answer in self.question.answers:
             if best_answer is None:
                 best_answer = answer
-            elif answer.up_vote_count > best_answer.up_vote_count:
+            elif answer.score > best_answer.score:
                 best_answer = answer
 
         # Initialzie winning_answer
@@ -28,27 +29,39 @@ class SOTWParser:
 
     @property
     def sotw_num(self):
-        pass
+        title = self.question.title
+        regex = re.compile('#[0-9]+')
+        match = regex.search(title)
+        
+        return (int(match.group(0)[1:]) + 1)
+
 
     @property
     def username(self):
-        pass
+        return self.winningAnswer.owner.display_name
 
     @property
     def tag(self):
-        pass
+        regex = re.compile('[tag:[0-9a-zA-Z\-]+]')
+        match = regex.search(self.winningAnswer.body)
+
+        return match.group(0)
 
     @property
     def upvotes(self):
-        pass
+        return self.winningAnswer.score
 
     @property
     def last_winning(self):
-        pass
+        return self.question.link
 
     @property
     def last_screenshot(self):
-        pass
+        regex = re.compile('https://i.stack.imgur.com/[0-9a-zA-Z]+.jpg')
+        match = regex.search(self.winningAnswer.body)
+
+        return match.group(0)
+
 
 # Retrieve ID or URL for previous SOTW
 inp = input("Please enter the Post ID or URL for the SOTW that just finished: ")
@@ -65,9 +78,9 @@ theme_title = None
 theme_description = None
 while True:
     theme = input("Is there a theme (y/n)?")
-    if theme.tolower() not in ["y", "n"]:
+    if theme.lower() not in ["y", "n"]:
         continue
-    elif theme.tolower() == "y":
+    elif theme.lower() == "y":
         theme_title = input("Theme title:")
         theme_description = input("Theme description:")
     break
@@ -76,9 +89,12 @@ while True:
 id = 16693
 meta = Site(ArqadeMeta)
 question = meta.question(id)
+parser = SOTWParser(question)
 
 
 # Perform the build
+'''
 input = Input()
 template = Template(input)
 template.CreateOutput()
+'''
